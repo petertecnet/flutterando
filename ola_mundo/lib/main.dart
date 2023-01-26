@@ -13,13 +13,11 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: Center(
-      child: Text(
-        title,
-        textDirection: TextDirection.ltr,
-        style: TextStyle(color: Colors.black, fontSize: 50.0),
+    return MaterialApp(
+      theme: ThemeData(primarySwatch: Colors.red),
+      home: Container(
+        child: Center(child: Text('Fluterando')),
       ),
-    ));
+    );
   }
 }
