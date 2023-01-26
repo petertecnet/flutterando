@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ola_mundo/app_controller.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -9,24 +10,23 @@ class HomePage extends StatefulWidget {
 
 class HomePageState extends State<HomePage> {
   int counter = 0;
-
+  bool isDarkTheme = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Home Page'),
       ),
-      body: Container(
-          height: 200,
-          width: 200,
-          color: Colors.black,
-          child: Center(
-            child: Container(
-              height: 100,
-              width: 100,
-              color: Colors.green,
-            ),
-          )),
+      body: Center(
+        child: Switch(
+          value: AppController.instance.isDarkTheme,
+          onChanged: (value) {
+            setState(() {
+              AppController.instance.changeTheme();
+            });
+          },
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () {
