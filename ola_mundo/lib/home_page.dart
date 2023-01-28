@@ -28,19 +28,11 @@ class HomePageState extends State<HomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                width: 50,
-                height: 50,
-                color: Colors.black,
-              ),
-              Container(
-                width: 50,
-                height: 50,
-                color: Colors.black,
-              ),
-              Container(
-                width: 50,
-                height: 50,
-                color: Colors.black,
+                width: 500,
+                height: 1,
+                color: AppController.instance.isDarkTheme
+                    ? Colors.white
+                    : Colors.black,
               ),
             ],
           )
