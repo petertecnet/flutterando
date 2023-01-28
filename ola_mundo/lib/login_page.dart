@@ -30,44 +30,59 @@ class _LoginPageState extends State<LoginPage> {
                   Container(
                     height: 100,
                   ),
-                  TextField(
-                    onChanged: (text) {
-                      email = text;
-                    },
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(
-                        filled: true, //<-- SEE HERE
-                        fillColor: Colors.white,
-                        labelText: 'Email',
-                        border: OutlineInputBorder()),
+                  Card(
+                    child: Padding(
+                      padding: const EdgeInsets.all(6.0),
+                      child: Column(
+                        children: [
+                          TextField(
+                            onChanged: (text) {
+                              email = text;
+                            },
+                            keyboardType: TextInputType.emailAddress,
+                            decoration: InputDecoration(
+                                filled: true, //<-- SEE HERE
+                                fillColor: Colors.white,
+                                labelText: 'Email',
+                                border: OutlineInputBorder()),
+                          ),
+                          SizedBox(height: 10),
+                          TextField(
+                            onChanged: (text) {
+                              password = text;
+                            },
+                            obscureText: true,
+                            decoration: InputDecoration(
+                                filled: true, //<-- SEE HERE
+                                fillColor: Colors.white,
+                                labelText: 'Passowrd',
+                                border: OutlineInputBorder()),
+                          ),
+                          SizedBox(height: 15),
+                          ElevatedButton(
+                              onPressed: () {
+                                if (email == 'pivow@hotmail.com' &&
+                                    password == '123') {
+                                  Navigator.of(context)
+                                      .pushReplacementNamed('/home');
+                                } else {
+                                  Navigator.of(context)
+                                      .pushReplacementNamed('/');
+                                }
+                              },
+                              style: ElevatedButton.styleFrom(
+                                  primary: Colors.blueGrey,
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 210, vertical: 20),
+                                  textStyle: TextStyle(fontSize: 20)),
+                              child: Text(
+                                'Entrar',
+                                textAlign: TextAlign.center,
+                              )),
+                        ],
+                      ),
+                    ),
                   ),
-                  SizedBox(height: 10),
-                  TextField(
-                    onChanged: (text) {
-                      password = text;
-                    },
-                    obscureText: true,
-                    decoration: InputDecoration(
-                        filled: true, //<-- SEE HERE
-                        fillColor: Colors.white,
-                        labelText: 'Passowrd',
-                        border: OutlineInputBorder()),
-                  ),
-                  SizedBox(height: 15),
-                  ElevatedButton(
-                      onPressed: () {
-                        if (email == 'pivow@hotmail.com' && password == '123') {
-                          Navigator.of(context).pushReplacementNamed('/home');
-                        } else {
-                          Navigator.of(context).pushReplacementNamed('/');
-                        }
-                      },
-                      style: ElevatedButton.styleFrom(
-                          primary: Colors.blueGrey,
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 50, vertical: 20),
-                          textStyle: TextStyle(fontSize: 20)),
-                      child: Text('Entrar')),
                 ],
               ),
             ),
