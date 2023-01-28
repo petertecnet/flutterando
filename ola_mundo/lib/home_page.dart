@@ -21,22 +21,58 @@ class HomePageState extends State<HomePage> {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Text('Contatdor: $counter'),
-          CustomSwitch(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+        child: ListView(
+            //mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                width: 500,
-                height: 1,
-                color: AppController.instance.isDarkTheme
-                    ? Colors.white
-                    : Colors.black,
-              ),
-            ],
-          )
-        ]),
+              Text('Contatdor: $counter'),
+              CustomSwitch(),
+              CustomSwitch(),
+              CustomSwitch(),
+              CustomSwitch(),
+              CustomSwitch(),
+              CustomSwitch(),
+              CustomSwitch(),
+              CustomSwitch(),
+              CustomSwitch(),
+              CustomSwitch(),
+              CustomSwitch(),
+              CustomSwitch(),
+              CustomSwitch(),
+              CustomSwitch(),
+              CustomSwitch(),
+              CustomSwitch(),
+              CustomSwitch(),
+              CustomSwitch(),
+              CustomSwitch(),
+              CustomSwitch(),
+              CustomSwitch(),
+              CustomSwitch(),
+              CustomSwitch(),
+              CustomSwitch(),
+              CustomSwitch(),
+              CustomSwitch(),
+              CustomSwitch(),
+              CustomSwitch(),
+              CustomSwitch(),
+              CustomSwitch(),
+              CustomSwitch(),
+              CustomSwitch(),
+              CustomSwitch(),
+              CustomSwitch(),
+              CustomSwitch(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 500,
+                    height: 1,
+                    color: AppController.instance.isDarkTheme
+                        ? Colors.white
+                        : Colors.black,
+                  ),
+                ],
+              )
+            ]),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
